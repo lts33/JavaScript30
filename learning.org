@@ -1,0 +1,15 @@
+#+title: Learning
+* Q1
+** script might ran before page finished loading
+i tried to seperated Javascript out of the html file. it seems not working at the begining. script can not find any ~key~ class which is weird. then i found out the location of script src tag would load the script at that point. possible solutions:
+*** Load Script after Body
+which works for me
+*** Check Dom load event ( based on [[https://stackoverflow.com/questions/35520531/javascript-is-not-working-outside-the-html-document][discussion]] in Stack Overflow )
+** some methods for ~querySelector~
+I guess jQuery or React might have more convient solutions
+Example to select specific attribute
+#+begin_src javascript
+
+const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+
+#+end_src
